@@ -1,0 +1,14 @@
+<?xml version ="1.0" encoding="utf-8"?>
+
+<!--  David Borland
+      
+      XMLMaterial file for rendering silhouette edges with VTK
+-->
+
+<Material name="silhouetteEdge">
+  <Shader scope="Vertex" name="vertex" location="perPixelLighting_vp.glsl" language="GLSL" entry="main">
+  </Shader>
+
+  <Shader scope="Fragment" name="fragment" location="silhouetteEdge_fp.glsl" language="GLSL" entry="main">
+  </Shader>
+</Material>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Voluminous", "Voluminous.vcxproj", "{379FF313-97E0-4550-BD54-D96CBBD87827}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SaveSlices", "SaveSlices.vcxproj", "{EF512BDF-6A54-4F7A-A7DA-AFC76331C823}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{379FF313-97E0-4550-BD54-D96CBBD87827}.Debug|Win32.ActiveCfg = Debug|Win32
+		{379FF313-97E0-4550-BD54-D96CBBD87827}.Debug|Win32.Build.0 = Debug|Win32
+		{379FF313-97E0-4550-BD54-D96CBBD87827}.Release|Win32.ActiveCfg = Release|Win32
+		{379FF313-97E0-4550-BD54-D96CBBD87827}.Release|Win32.Build.0 = Release|Win32
+		{EF512BDF-6A54-4F7A-A7DA-AFC76331C823}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EF512BDF-6A54-4F7A-A7DA-AFC76331C823}.Debug|Win32.Build.0 = Debug|Win32
+		{EF512BDF-6A54-4F7A-A7DA-AFC76331C823}.Release|Win32.ActiveCfg = Release|Win32
+		{EF512BDF-6A54-4F7A-A7DA-AFC76331C823}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+  <file alias="license">License.txt</file>
+  <file alias="icon">Data/Voluminous.ico</file>
+  <file alias="logo">Data/RENCI-Official-Logo-No-Tagline_alpha.png</file>
+  <file alias="logo_bw">Data/RENCI-Official-Logo-No-Tagline_alpha_bw.png</file>
+  <file alias="opaqueShader">perPixelLighting.xml</file>
+  <file alias="translucentShader">silhouetteFalloff.xml</file>
+</qresource>
+</RCC>

@@ -1,0 +1,69 @@
+<?xml version ="1.0" encoding="utf-8"?>
+
+<!--  David Borland
+      
+      XMLMaterial file for performing silhouette falloff transparency in VTK
+-->
+
+<Material name="silhouetteFalloff">
+  <Shader scope="Vertex" name="perPixelLightingVertex" location="Inline" language="GLSL" entry="main">
+<![CDATA[    
+varying vec3 normal, lightDir, eyeVec;
+
+void main() {
+	// Calculate the vertex normal to
+	normal = gl_NormalMatrix * gl_Normal;
+	
+	// Calculate the position in world space
+	vec3 position = gl_ModelViewMatrix * gl_Vertex;
+	
+	// Calculate the light direction and eye vector
+	lightDir = gl_LightSource[0].position.xyz - position;
+	eyeVec = -position;
+	
+	// Transform the position, as is necessary for all vertex programs
+	gl_Position = ftransform();	
+}
+]]>
+  </Shader>
+
+  <Shader scope="Fragment" name="silhouetteFalloffFragment" location="Inline" language="GLSL" entry="main">
+<![CDATA[  
+varying vec3 objectPosition, normal, lightDir, eyeVec;
+
+void main() {					 
+	// Compute vectors needed for opacity
+	vec3 N = normalize(normal);
+	vec3 E = normalize(eyeVec);
+	
+	// Compute the dot product of eye vector and surface normal
+	float d = dot(N, E);
+	
+	if (d < 0.0) {
+		discard;
+	}
+	
+	// Compute opacity based on dot product
+	float opacity = min(1.0 - d, 1.0);
+	
+	// Compute vectors needed for lighting	
+	vec3 L = normalize(lightDir);
+	vec3 R = reflect(-L, N);
+	
+	// Perform lighting
+	float lambertTerm = abs(dot(N, L));	
+	float specularTerm = pow(max(dot(R, E), 0.0), gl_FrontMaterial.shininess);
+	
+	vec4 color = gl_FrontLightModelProduct.sceneColor;
+	color += gl_FrontLightProduct[0].ambient;
+	color += gl_FrontLightProduct[0].diffuse * lambertTerm;
+	color += gl_FrontLightProduct[0].specular * specularTerm;
+	
+	color.a = 1.0;
+	color *= opacity;
+	
+	gl_FragColor = color;
+}
+]]>
+  </Shader>
+</Material>

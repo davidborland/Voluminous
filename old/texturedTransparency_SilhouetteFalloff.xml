@@ -1,0 +1,14 @@
+<?xml version ="1.0" encoding="utf-8"?>
+
+<!--  David Borland
+      
+      XMLMaterial file for performing silhouette falloff transparency in VTK
+-->
+
+<Material name="texturedTransparency_SilhouetteFalloff">
+  <Shader scope="Vertex" name="vertex" location="perPixelLighting_ObjectPosition_vp.glsl" language="GLSL" entry="main">
+  </Shader>
+
+  <Shader scope="Fragment" name="fragment" location="texturedTransparency_SilhouetteFalloff_fp.glsl" language="GLSL" entry="main">
+  </Shader>
+</Material>
