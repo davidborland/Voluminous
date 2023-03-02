@@ -1,2 +1,2 @@
 # Voluminous
-Visualize the difference between two volumes
+Visualize the precomputed difference between two volumes
